@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+class Fraction
+{
+    int numerator, denominator;
+
+public:
+    void accept()
+    {
+        cout << "Enter numerator: ";
+        cin >> numerator;
+
+        cout << "Enter denominator: ";
+        cin >> denominator;
+    }
+
+    Fraction add(Fraction f)
+    {
+        Fraction result;
+
+        result.numerator = numerator + f.numerator;
+        result.denominator = denominator + f.denominator;
+
+        return result;
+    }
+
+    void display()
+    {
+        cout << numerator << "/" << denominator;
+    }
+};
+
+int main()
+{
+    Fraction f1, f2, f3;
+
+    cout << "Enter first fraction:" << endl;
+    f1.accept();
+
+    cout << "\nEnter second fraction:" << endl;
+    f2.accept();
+
+    f3 = f1.add(f2);
+
+    cout << "\nFirst Fraction = ";
+    f1.display();
+
+    cout << "\nSecond Fraction = ";
+    f2.display();
+
+    cout << "\nAddition = ";
+    f3.display();
+
+    return 0;
+}
